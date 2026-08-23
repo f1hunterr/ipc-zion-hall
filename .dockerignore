@@ -1,0 +1,7 @@
+# pnpm-workspace + install artifacts
+node_modules
+**/node_modules
+**/dist
+**/.turbo
+.git
+.env

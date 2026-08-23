@@ -1,0 +1,22 @@
+# IPC Zion Hall — API server (Express + SQLite)
+FROM node:24-slim
+
+# Build tools required by better-sqlite3 (native C++ addon)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 make g++ \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN corepack enable && corepack prepare pnpm@10 --activate
+
+WORKDIR /app
+COPY . .
+
+ENV NODE_ENV=production
+
+RUN pnpm install --no-frozen-lockfile
+
+WORKDIR /app/artifacts/server
+
+EXPOSE 4100
+
+CMD ["pnpm", "start"]
