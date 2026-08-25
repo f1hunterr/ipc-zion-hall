@@ -8,11 +8,13 @@ pnpm workspace, Vite+React frontend, Express+SQLite backend, Docker Compose,
 served behind an existing nginx-proxy-manager instance instead of Vercel/Coolify.
 
 ## Structure
-- `artifacts/site` — Vite + React 19 + TypeScript + Tailwind v4 (soft blue /
-  ivory / white theme). Pages: Home, About, Ministries, Service Times, Media,
-  Contact. Also: Google Maps embed, floating WhatsApp button, Events banner.
-- `artifacts/server` — Express + better-sqlite3. `/api/contact` and
-  `/api/prayer-request` (public POST, admin-key GET each), `/api/health`.
+- [`artifacts/site`](artifacts/site/README.md) — Vite + React 19 +
+  TypeScript + Tailwind v4 (soft blue / white theme). Pages: Home, About,
+  Ministries, Service Times, Media, Contact. Also: Google Maps embed,
+  floating WhatsApp button, Events banner.
+- [`artifacts/server`](artifacts/server/README.md) — Express +
+  better-sqlite3. `/api/contact` and `/api/prayer-request` (public POST,
+  admin-key GET each), `/api/health`.
 - `Dockerfile` — builds the frontend, serves via nginx (`nginx.conf` proxies
   `/api` + `/health` to the `api` service).
 - `Dockerfile.api` — builds/runs the backend (needs python3/make/g++ for the
