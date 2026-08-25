@@ -68,7 +68,7 @@ export default function Layout() {
             <img
               src={logo}
               alt="IPC Zion Hall logo"
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain shrink-0"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-contain shrink-0"
             />
             <div className="leading-tight min-w-0">
               <div className="font-serif text-lg font-semibold text-blue-900 truncate">
