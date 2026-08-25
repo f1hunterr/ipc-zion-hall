@@ -6,7 +6,7 @@ RUN corepack enable && corepack prepare pnpm@10 --activate
 WORKDIR /app
 COPY . .
 
-RUN pnpm install --no-frozen-lockfile
+RUN pnpm install --no-frozen-lockfile --filter site...
 
 ENV NODE_ENV=production
 

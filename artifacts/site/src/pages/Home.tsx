@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import churchFront from "../assets/church-front.jpg";
 
 export default function Home() {
   return (
@@ -61,22 +62,14 @@ export default function Home() {
 
       <section className="bg-white border-t border-blue-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-blue-900 mb-4">
-            Placeholder photo gallery
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-blue-900 mb-8">
+            Our Church
           </h2>
-          <p className="text-blue-600 text-sm mb-8">
-            Church photos will go here once provided.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="aspect-square rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-300 text-sm"
-              >
-                Photo {i}
-              </div>
-            ))}
-          </div>
+          <img
+            src={churchFront}
+            alt="IPC Zion Hall, Lingarajapuram, Bengaluru"
+            className="w-full rounded-2xl border border-blue-100 shadow-sm"
+          />
         </div>
       </section>
     </div>

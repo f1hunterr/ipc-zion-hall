@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `px-3 py-2 rounded-full text-sm font-medium transition-colors ${
@@ -7,50 +8,45 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
       : "text-blue-900 hover:bg-blue-100"
   }`;
 
+const NAV_ITEMS = [
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About" },
+  { to: "/service-times", label: "Service Times" },
+  { to: "/contact", label: "Contact" },
+];
+
+function NavItems() {
+  return (
+    <>
+      {NAV_ITEMS.map(({ to, label, end }) => (
+        <NavLink key={to} to={to} end={end} className={navLinkClass}>
+          {label}
+        </NavLink>
+      ))}
+    </>
+  );
+}
+
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-ivory">
       <header className="sticky top-0 z-20 backdrop-blur bg-ivory/90 border-b border-blue-100">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
-          <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-serif text-lg">
-              Z
-            </div>
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="IPC Zion Hall logo" className="w-10 h-10 rounded-full object-cover" />
             <div className="leading-tight">
               <div className="font-serif text-lg font-semibold text-blue-900">
                 IPC Zion Hall
               </div>
               <div className="text-xs text-blue-600">Lingarajapuram, Bengaluru</div>
             </div>
-          </a>
+          </Link>
           <nav className="hidden sm:flex items-center gap-1">
-            <NavLink to="/" end className={navLinkClass}>
-              Home
-            </NavLink>
-            <NavLink to="/about" className={navLinkClass}>
-              About
-            </NavLink>
-            <NavLink to="/service-times" className={navLinkClass}>
-              Service Times
-            </NavLink>
-            <NavLink to="/contact" className={navLinkClass}>
-              Contact
-            </NavLink>
+            <NavItems />
           </nav>
         </div>
         <nav className="flex sm:hidden items-center gap-1 px-4 pb-3 overflow-x-auto">
-          <NavLink to="/" end className={navLinkClass}>
-            Home
-          </NavLink>
-          <NavLink to="/about" className={navLinkClass}>
-            About
-          </NavLink>
-          <NavLink to="/service-times" className={navLinkClass}>
-            Service Times
-          </NavLink>
-          <NavLink to="/contact" className={navLinkClass}>
-            Contact
-          </NavLink>
+          <NavItems />
         </nav>
       </header>
 
@@ -68,14 +64,24 @@ export default function Layout() {
           </div>
           <div>
             <div className="font-semibold mb-1">Contact</div>
-            <p className="text-blue-700">Address line placeholder, Lingarajapuram, Bengaluru</p>
-            <p className="text-blue-700">+91 00000 00000</p>
+            <p className="text-blue-700">
+              <a
+                href="https://maps.app.goo.gl/CcXvfP4r7YXHCjJYA"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:underline"
+              >
+                Fouzil Manzil, 3rd Cross Rd, Kariyannapalya, Kadugondanahalli,
+                Bengaluru, Karnataka 560084
+              </a>
+            </p>
+            <p className="text-blue-700">Pastor Jayaseelan AGJ — +91 99869 14560</p>
             <p className="text-blue-700">contact@ipczionhall.example</p>
           </div>
           <div>
             <div className="font-semibold mb-1">Service Times</div>
-            <p className="text-blue-700">Sunday Worship — 9:30 AM</p>
-            <p className="text-blue-700">Wednesday Prayer — 6:30 PM</p>
+            <p className="text-blue-700">Sunday Service — 8:30–10:30 AM</p>
+            <p className="text-blue-700">Thursday Fasting Prayer — 6–7 PM</p>
           </div>
         </div>
         <div className="text-center text-xs text-blue-400 pb-4">

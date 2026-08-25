@@ -4,3 +4,13 @@ dist/
 *.log
 .DS_Store
 data/
+
+# workspace standardizes on pnpm — ignore stray lockfiles from other package managers
+package-lock.json
+yarn.lock
+
+# raw source images — optimized copies live in artifacts/site/src/assets
+/assets/
+
+# Playwright MCP scratch output
+.playwright-mcp/

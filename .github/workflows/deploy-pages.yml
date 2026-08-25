@@ -34,6 +34,7 @@ jobs:
       - name: Build site
         env:
           GITHUB_PAGES: "true"
+          VITE_GITHUB_PAGES: "true"
         run: pnpm --filter site run build
 
       - name: Add SPA fallback (404.html)
