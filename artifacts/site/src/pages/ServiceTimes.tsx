@@ -21,7 +21,7 @@ const annualEvents = ["Summer Camp", "Kids Club Anniversary", "Revival Meeting"]
 export default function ServiceTimes() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <p className="uppercase tracking-widest text-gold-600 text-xs font-semibold mb-3">
+      <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">
         Join Us
       </p>
       <h1 className="font-serif text-3xl sm:text-4xl font-semibold text-blue-900 mb-3">

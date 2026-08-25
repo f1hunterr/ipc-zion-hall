@@ -5,8 +5,8 @@ import WhatsAppButton from "./WhatsAppButton";
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `px-3 py-2 rounded-full text-sm font-medium transition-colors ${
     isActive
-      ? "bg-gold-600 text-white"
-      : "text-blue-900 hover:bg-gold-50"
+      ? "bg-blue-600 text-white"
+      : "text-blue-900 hover:bg-blue-100"
   }`;
 
 const NAV_ITEMS = [

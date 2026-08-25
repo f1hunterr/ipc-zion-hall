@@ -51,7 +51,7 @@ export default function Contact() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <p className="uppercase tracking-widest text-gold-600 text-xs font-semibold mb-3">
+      <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">
         Get in Touch
       </p>
       <h1 className="font-serif text-3xl sm:text-4xl font-semibold text-blue-900 mb-3">
@@ -73,7 +73,7 @@ export default function Contact() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="mailto:contact@ipczionhall.example"
-                className="inline-block px-6 py-3 rounded-full bg-gold-600 text-white font-medium hover:bg-gold-700 transition-colors"
+                className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
               >
                 Email Us
               </a>
@@ -137,7 +137,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="px-6 py-3 rounded-full bg-gold-600 text-white font-medium hover:bg-gold-700 transition-colors disabled:opacity-60"
+              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors disabled:opacity-60"
             >
               {status === "sending" ? "Sending..." : "Send Message"}
             </button>
@@ -182,7 +182,7 @@ export default function Contact() {
       </div>
 
       <div className="mt-16 border-t border-blue-100 pt-10">
-        <p className="uppercase tracking-widest text-gold-600 text-xs font-semibold mb-3">
+        <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">
           Need Prayer?
         </p>
         <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-blue-900 mb-3">
