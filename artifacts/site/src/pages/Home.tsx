@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import churchFront from "../assets/church-front.jpg";
 
 export default function Home() {
   return (
@@ -58,19 +57,6 @@ export default function Home() {
             <p className="text-blue-700 text-sm">{c.desc}</p>
           </div>
         ))}
-      </section>
-
-      <section className="bg-white border-t border-blue-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-blue-900 mb-8">
-            Our Church
-          </h2>
-          <img
-            src={churchFront}
-            alt="IPC Zion Hall, Lingarajapuram, Bengaluru"
-            className="w-full rounded-2xl border border-blue-100 shadow-sm"
-          />
-        </div>
       </section>
     </div>
   );
