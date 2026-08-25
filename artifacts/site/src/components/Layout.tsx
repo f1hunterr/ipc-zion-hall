@@ -33,7 +33,7 @@ export default function Layout() {
       <header className="sticky top-0 z-20 backdrop-blur bg-ivory/90 border-b border-blue-100">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="IPC Zion Hall logo" className="w-10 h-10 rounded-full object-cover" />
+            <img src={logo} alt="IPC Zion Hall logo" className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain shrink-0" />
             <div className="leading-tight">
               <div className="font-serif text-lg font-semibold text-blue-900">
                 IPC Zion Hall
