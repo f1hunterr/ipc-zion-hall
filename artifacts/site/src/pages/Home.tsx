@@ -9,15 +9,15 @@ export default function Home() {
         className="relative bg-cover bg-center"
         style={{ backgroundImage: `url(${churchFront})` }}
       >
-        <div className="absolute inset-0 bg-blue-950/70" />
+        <div className="absolute inset-0 bg-blue-950/45" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
-          <p className="uppercase tracking-widest text-blue-200 text-xs sm:text-sm font-semibold mb-4">
+          <p className="uppercase tracking-widest text-blue-200 text-xs sm:text-sm font-semibold mb-4 [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
             Welcome to
           </p>
-          <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-white mb-6">
+          <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-white mb-6 [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
             IPC Zion Hall
           </h1>
-          <p className="text-blue-100 max-w-xl mx-auto mb-10">
+          <p className="text-blue-100 max-w-xl mx-auto mb-10 [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
             A warm, welcoming congregation in Lingarajapuram, Bengaluru. Join us
             for worship, fellowship, and growing in faith together.
           </p>
