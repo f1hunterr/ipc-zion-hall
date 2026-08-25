@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import churchFront from "../assets/church-front.jpg";
 import EventsBanner from "../components/EventsBanner";
 import Reveal from "../components/Reveal";
+import usePageTitle from "../usePageTitle";
 
 const CARD_HOVER =
   "transition-all duration-200 hover:-translate-y-1 hover:shadow-md";
 
 export default function Home() {
+  usePageTitle();
+
   return (
     <div>
       <section className="relative overflow-hidden">
@@ -29,13 +32,13 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-3 animate-fade-up [animation-delay:300ms]">
             <Link
               to="/service-times"
-              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95"
+              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900"
             >
               Service Times
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-full bg-white border border-blue-200 text-blue-900 font-medium transition-all duration-200 hover:bg-blue-50 hover:scale-[1.03] active:scale-95"
+              className="px-6 py-3 rounded-full bg-white border border-blue-200 text-blue-900 font-medium transition-all duration-200 hover:bg-blue-50 hover:scale-[1.03] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
             >
               Get in Touch
             </Link>

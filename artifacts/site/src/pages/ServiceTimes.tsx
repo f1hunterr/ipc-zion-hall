@@ -1,5 +1,7 @@
 import MapEmbed from "../components/MapEmbed";
 import Reveal from "../components/Reveal";
+import usePageTitle from "../usePageTitle";
+import { ANNUAL_EVENTS } from "../annualEvents";
 
 const weeklySchedule = [
   { day: "Sunday", items: [{ name: "Sunday Service", time: "8:30 – 10:30 AM" }] },
@@ -17,9 +19,9 @@ const monthlySchedule = [
   { name: "Youth Sunday", when: "Fourth week" },
 ];
 
-const annualEvents = ["Summer Camp", "Kids Club Anniversary", "Revival Meeting"];
-
 export default function ServiceTimes() {
+  usePageTitle("Service Times");
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
       <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">
@@ -80,7 +82,7 @@ export default function ServiceTimes() {
       <Reveal>
         <div className="bg-white rounded-2xl border border-blue-100 p-6">
           <ul className="grid gap-2 sm:grid-cols-3 text-sm text-blue-700">
-            {annualEvents.map((e) => (
+            {ANNUAL_EVENTS.map((e) => (
               <li key={e} className="font-medium text-blue-900">
                 {e}
               </li>

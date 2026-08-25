@@ -1,6 +1,21 @@
 import { useState } from "react";
 import MapEmbed from "../components/MapEmbed";
 import Reveal from "../components/Reveal";
+import usePageTitle from "../usePageTitle";
+
+function Spinner() {
+  return (
+    <svg
+      className="animate-spin h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+    </svg>
+  );
+}
 
 const API_BASE = import.meta.env.VITE_API_URL || "";
 const IS_STATIC_BUILD = import.meta.env.VITE_GITHUB_PAGES === "true";
@@ -10,6 +25,8 @@ const WHATSAPP_URL =
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
 export default function Contact() {
+  usePageTitle("Contact");
+
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [status, setStatus] = useState<FormStatus>("idle");
 
@@ -75,7 +92,7 @@ export default function Contact() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block px-6 py-3 rounded-full bg-[#25D366] text-white font-medium transition-all duration-200 hover:bg-[#1ebe5d] hover:scale-[1.03] active:scale-95"
+                className="inline-block px-6 py-3 rounded-full bg-[#25D366] text-white font-medium transition-all duration-200 hover:bg-[#1ebe5d] hover:scale-[1.03] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
               >
                 WhatsApp Us
               </a>
@@ -131,8 +148,9 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 disabled:opacity-60"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
             >
+              {status === "sending" && <Spinner />}
               {status === "sending" ? "Sending..." : "Send Message"}
             </button>
             {status === "sent" && (
@@ -229,8 +247,9 @@ export default function Contact() {
             <button
               type="submit"
               disabled={prayerStatus === "sending"}
-              className="px-6 py-3 rounded-full bg-blue-900 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 disabled:opacity-60"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-900 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2"
             >
+              {prayerStatus === "sending" && <Spinner />}
               {prayerStatus === "sending" ? "Sending..." : "Submit Prayer Request"}
             </button>
             {prayerStatus === "sent" && (

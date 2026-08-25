@@ -1,6 +1,9 @@
 import Reveal from "../components/Reveal";
+import usePageTitle from "../usePageTitle";
 
 export default function Media() {
+  usePageTitle("Media");
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
       <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">

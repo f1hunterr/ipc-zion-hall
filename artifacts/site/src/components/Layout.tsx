@@ -3,15 +3,18 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.png";
 import WhatsAppButton from "./WhatsAppButton";
 
+const FOCUS_RING =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2";
+
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `px-3 py-2 rounded-full text-sm font-medium transition-colors ${
+  `px-3 py-2 rounded-full text-sm font-medium transition-colors ${FOCUS_RING} ${
     isActive
       ? "bg-blue-600 text-white"
       : "text-blue-900 hover:bg-blue-100"
   }`;
 
 const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+  `block px-4 py-3 rounded-lg text-base font-medium transition-colors ${FOCUS_RING} ${
     isActive
       ? "bg-blue-600 text-white"
       : "text-blue-900 hover:bg-blue-50"
@@ -81,7 +84,7 @@ export default function Layout() {
 
           <button
             type="button"
-            className="md:hidden shrink-0 p-2 -mr-2 rounded-lg text-blue-900 hover:bg-blue-100"
+            className={`md:hidden shrink-0 p-2 -mr-2 rounded-lg text-blue-900 hover:bg-blue-100 ${FOCUS_RING}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
+import usePageTitle from "../usePageTitle";
 
 export default function About() {
+  usePageTitle("About");
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
       <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">

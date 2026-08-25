@@ -1,4 +1,4 @@
-const ANNUAL_EVENTS = ["Summer Camp", "Kids Club Anniversary", "Revival Meeting"];
+import { ANNUAL_EVENTS } from "../annualEvents";
 
 export default function EventsBanner() {
   return (

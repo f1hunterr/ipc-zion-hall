@@ -9,6 +9,7 @@ import Ministries from "./pages/Ministries";
 import ServiceTimes from "./pages/ServiceTimes";
 import Media from "./pages/Media";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="service-times" element={<ServiceTimes />} />
           <Route path="media" element={<Media />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
