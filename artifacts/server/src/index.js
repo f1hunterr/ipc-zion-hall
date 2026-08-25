@@ -71,7 +71,7 @@ app.post("/api/contact", contactLimiter, (req, res) => {
   const stmt = db.prepare(
     "INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)"
   );
-  const info = stmt.run(name.trim(), email.trim(), phone?.trim() || null, message.trim());
+  const info = stmt.run(name.trim(), email.trim(), typeof phone === "string" && phone.trim() || null, message.trim());
   res.status(201).json({ id: info.lastInsertRowid });
 });
 
