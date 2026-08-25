@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.png";
 import WhatsAppButton from "./WhatsAppButton";
@@ -7,6 +8,13 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     isActive
       ? "bg-blue-600 text-white"
       : "text-blue-900 hover:bg-blue-100"
+  }`;
+
+const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+    isActive
+      ? "bg-blue-600 text-white"
+      : "text-blue-900 hover:bg-blue-50"
   }`;
 
 const NAV_ITEMS = [
@@ -31,26 +39,72 @@ function NavItems() {
 }
 
 export default function Layout() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-ivory">
       <header className="sticky top-0 z-20 backdrop-blur bg-ivory/90 border-b border-blue-100">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="IPC Zion Hall logo" className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain shrink-0" />
-            <div className="leading-tight">
-              <div className="font-serif text-lg font-semibold text-blue-900">
+          <Link
+            to="/"
+            className="flex items-center gap-3 min-w-0"
+            onClick={() => setMenuOpen(false)}
+          >
+            <img
+              src={logo}
+              alt="IPC Zion Hall logo"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain shrink-0"
+            />
+            <div className="leading-tight min-w-0">
+              <div className="font-serif text-lg font-semibold text-blue-900 truncate">
                 IPC Zion Hall
               </div>
-              <div className="text-xs text-blue-600">Lingarajapuram, Bengaluru</div>
+              <div className="text-xs text-blue-600 truncate">Lingarajapuram, Bengaluru</div>
             </div>
           </Link>
-          <nav className="hidden sm:flex items-center gap-1">
+
+          <nav className="hidden md:flex items-center gap-1 shrink-0">
             <NavItems />
           </nav>
+
+          <button
+            type="button"
+            className="md:hidden shrink-0 p-2 -mr-2 rounded-lg text-blue-900 hover:bg-blue-100"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            ) : (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            )}
+          </button>
         </div>
-        <nav className="flex sm:hidden items-center gap-1 px-4 pb-3 overflow-x-auto">
-          <NavItems />
-        </nav>
+
+        {menuOpen && (
+          <nav
+            id="mobile-nav"
+            className="md:hidden border-t border-blue-100 px-4 py-3 space-y-1"
+          >
+            {NAV_ITEMS.map(({ to, label, end }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={end}
+                className={mobileNavLinkClass}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+        )}
       </header>
 
       <main className="flex-1">

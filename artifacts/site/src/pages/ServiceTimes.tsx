@@ -47,7 +47,7 @@ export default function ServiceTimes() {
               {s.items.map((it) => (
                 <div
                   key={it.name}
-                  className="flex items-center justify-between sm:justify-end gap-6 text-sm"
+                  className="flex flex-wrap items-center justify-between sm:justify-end gap-x-6 gap-y-1 text-sm"
                 >
                   <span className="text-blue-700">{it.name}</span>
                   <span className="font-medium text-blue-900">{it.time}</span>
