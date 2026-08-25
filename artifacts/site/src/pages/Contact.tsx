@@ -67,16 +67,9 @@ export default function Contact() {
           <div className="space-y-4">
             <p className="text-blue-700">
               This form isn't available on this version of the site. Please
-              reach out by email, phone, or WhatsApp instead — details to the
-              right.
+              reach out by phone or WhatsApp instead — details to the right.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a
-                href="mailto:contact@ipczionhall.example"
-                className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
-              >
-                Email Us
-              </a>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -172,10 +165,6 @@ export default function Contact() {
               <h3 className="font-semibold text-blue-900 mb-1">Phone</h3>
               <p className="text-blue-700 text-sm">Pastor Jayaseelan AGJ — +91 99869 14560</p>
             </div>
-            <div>
-              <h3 className="font-semibold text-blue-900 mb-1">Email</h3>
-              <p className="text-blue-700 text-sm">contact@ipczionhall.example</p>
-            </div>
           </div>
           <MapEmbed className="h-64" />
         </div>
@@ -199,10 +188,6 @@ export default function Contact() {
             Please reach out via{" "}
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="underline">
               WhatsApp
-            </a>{" "}
-            or{" "}
-            <a href="mailto:contact@ipczionhall.example" className="underline">
-              email
             </a>{" "}
             instead.
           </p>

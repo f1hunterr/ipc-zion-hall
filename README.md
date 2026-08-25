@@ -9,9 +9,10 @@ served behind an existing nginx-proxy-manager instance instead of Vercel/Coolify
 
 ## Structure
 - `artifacts/site` — Vite + React 19 + TypeScript + Tailwind v4 (soft blue /
-  ivory / white theme). Pages: Home, About, Service Times, Contact.
-- `artifacts/server` — Express + better-sqlite3. `/api/contact` (public POST,
-  admin-key GET), `/api/health`.
+  ivory / white theme). Pages: Home, About, Ministries, Service Times, Media,
+  Contact. Also: Google Maps embed, floating WhatsApp button, Events banner.
+- `artifacts/server` — Express + better-sqlite3. `/api/contact` and
+  `/api/prayer-request` (public POST, admin-key GET each), `/api/health`.
 - `Dockerfile` — builds the frontend, serves via nginx (`nginx.conf` proxies
   `/api` + `/health` to the `api` service).
 - `Dockerfile.api` — builds/runs the backend (needs python3/make/g++ for the
@@ -40,12 +41,14 @@ in production. Verify locally via `docker compose build` instead.
 - Swap to a real domain later once purchased.
 
 ## Content status
-No real content yet (logo, photos, service times, about text, contact
-details) — every page currently has clearly-marked `[Placeholder]` copy.
-Swap in real content once provided.
+Real: logo, hero photo, weekly/monthly/annual schedule, address (from Google
+Maps), pastor name and phone/WhatsApp number. Still placeholder: contact
+email, photo gallery, sermon videos, mission/vision/founding history (not
+fabricated — simply not shown until provided).
 
 ## TODO
-- [ ] Real content (logo, photos, about, service times, contact info)
+- [ ] Real contact email (currently phone/WhatsApp only)
+- [ ] Photos for the gallery, sermon videos
 - [ ] Provision homelab LXC + docker-compose deploy
 - [ ] Wire up NPM proxy host + DuckDNS subdomain
 - [ ] Decide on final domain (DuckDNS for now, real domain later)

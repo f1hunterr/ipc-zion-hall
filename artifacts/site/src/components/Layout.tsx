@@ -133,7 +133,6 @@ export default function Layout() {
               </a>
             </p>
             <p className="text-blue-700">Pastor Jayaseelan AGJ — +91 99869 14560</p>
-            <p className="text-blue-700">contact@ipczionhall.example</p>
           </div>
           <div>
             <div className="font-semibold mb-1">Service Times</div>
