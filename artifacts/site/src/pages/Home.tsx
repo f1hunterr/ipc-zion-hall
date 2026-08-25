@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import churchFront from "../assets/church-front.jpg";
+import EventsBanner from "../components/EventsBanner";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-blue-950/70" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
-          <p className="uppercase tracking-widest text-blue-200 text-xs sm:text-sm font-semibold mb-4">
+          <p className="uppercase tracking-widest text-gold-200 text-xs sm:text-sm font-semibold mb-4">
             Welcome to
           </p>
           <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-white mb-6">
@@ -23,7 +24,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               to="/service-times"
-              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+              className="px-6 py-3 rounded-full bg-gold-600 text-white font-medium hover:bg-gold-700 transition-colors"
             >
               Service Times
             </Link>
@@ -36,6 +37,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <EventsBanner />
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 grid gap-8 sm:grid-cols-3">
         {[

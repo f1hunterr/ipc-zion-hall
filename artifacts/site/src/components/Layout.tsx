@@ -1,17 +1,20 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.png";
+import WhatsAppButton from "./WhatsAppButton";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `px-3 py-2 rounded-full text-sm font-medium transition-colors ${
     isActive
-      ? "bg-blue-600 text-white"
-      : "text-blue-900 hover:bg-blue-100"
+      ? "bg-gold-600 text-white"
+      : "text-blue-900 hover:bg-gold-50"
   }`;
 
 const NAV_ITEMS = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
+  { to: "/ministries", label: "Ministries" },
   { to: "/service-times", label: "Service Times" },
+  { to: "/media", label: "Media" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -88,6 +91,8 @@ export default function Layout() {
           © {new Date().getFullYear()} IPC Zion Hall. All rights reserved.
         </div>
       </footer>
+
+      <WhatsAppButton />
     </div>
   );
 }

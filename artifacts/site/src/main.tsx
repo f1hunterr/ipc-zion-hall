@@ -5,7 +5,9 @@ import "./index.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Ministries from "./pages/Ministries";
 import ServiceTimes from "./pages/ServiceTimes";
+import Media from "./pages/Media";
 import Contact from "./pages/Contact";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -15,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="ministries" element={<Ministries />} />
           <Route path="service-times" element={<ServiceTimes />} />
+          <Route path="media" element={<Media />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

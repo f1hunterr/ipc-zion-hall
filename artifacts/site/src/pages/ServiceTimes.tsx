@@ -1,3 +1,5 @@
+import MapEmbed from "../components/MapEmbed";
+
 const weeklySchedule = [
   { day: "Sunday", items: [{ name: "Sunday Service", time: "8:30 – 10:30 AM" }] },
   {
@@ -19,7 +21,7 @@ const annualEvents = ["Summer Camp", "Kids Club Anniversary", "Revival Meeting"]
 export default function ServiceTimes() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">
+      <p className="uppercase tracking-widest text-gold-600 text-xs font-semibold mb-3">
         Join Us
       </p>
       <h1 className="font-serif text-3xl sm:text-4xl font-semibold text-blue-900 mb-3">
@@ -101,6 +103,7 @@ export default function ServiceTimes() {
             Bengaluru, Karnataka 560084
           </a>
         </p>
+        <MapEmbed className="h-64 mt-4" />
       </div>
     </div>
   );
