@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Reveal from "../components/Reveal";
 
 export default function About() {
   return (
@@ -25,12 +26,12 @@ export default function About() {
         </p>
       </div>
 
-      <div className="mt-12">
+      <Reveal className="mt-12">
         <h3 className="font-serif text-lg font-semibold text-blue-900 mb-2">
           Leadership
         </h3>
         <p className="text-blue-700">Pastor Jayaseelan AGJ leads the congregation.</p>
-      </div>
+      </Reveal>
     </div>
   );
 }

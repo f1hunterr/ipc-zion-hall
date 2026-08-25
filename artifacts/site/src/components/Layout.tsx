@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.png";
 import WhatsAppButton from "./WhatsAppButton";
@@ -40,10 +40,22 @@ function NavItems() {
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-ivory">
-      <header className="sticky top-0 z-20 backdrop-blur bg-ivory/90 border-b border-blue-100">
+      <header
+        className={`sticky top-0 z-20 backdrop-blur bg-ivory/90 border-b border-blue-100 transition-shadow duration-300 ${
+          scrolled ? "shadow-md" : "shadow-none"
+        }`}
+      >
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
           <Link
             to="/"

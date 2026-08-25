@@ -1,3 +1,5 @@
+import Reveal from "../components/Reveal";
+
 const MINISTRIES = [
   {
     name: "Sunday Service",
@@ -41,17 +43,16 @@ export default function Ministries() {
       </p>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {MINISTRIES.map((m) => (
-          <div
-            key={m.name}
-            className="bg-white rounded-2xl border border-blue-100 p-6"
-          >
-            <h3 className="font-serif text-lg font-semibold text-blue-900 mb-1">
-              {m.name}
-            </h3>
-            <p className="text-sm font-medium text-blue-700 mb-2">{m.when}</p>
-            <p className="text-blue-700 text-sm">{m.desc}</p>
-          </div>
+        {MINISTRIES.map((m, i) => (
+          <Reveal key={m.name} delayMs={i * 60}>
+            <div className="bg-white rounded-2xl border border-blue-100 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+              <h3 className="font-serif text-lg font-semibold text-blue-900 mb-1">
+                {m.name}
+              </h3>
+              <p className="text-sm font-medium text-blue-700 mb-2">{m.when}</p>
+              <p className="text-blue-700 text-sm">{m.desc}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </div>

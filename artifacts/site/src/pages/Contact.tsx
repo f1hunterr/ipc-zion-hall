@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MapEmbed from "../components/MapEmbed";
+import Reveal from "../components/Reveal";
 
 const API_BASE = import.meta.env.VITE_API_URL || "";
 const IS_STATIC_BUILD = import.meta.env.VITE_GITHUB_PAGES === "true";
@@ -74,7 +75,7 @@ export default function Contact() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block px-6 py-3 rounded-full bg-[#25D366] text-white font-medium hover:bg-[#1ebe5d] transition-colors"
+                className="inline-block px-6 py-3 rounded-full bg-[#25D366] text-white font-medium transition-all duration-200 hover:bg-[#1ebe5d] hover:scale-[1.03] active:scale-95"
               >
                 WhatsApp Us
               </a>
@@ -130,7 +131,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors disabled:opacity-60"
+              className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 disabled:opacity-60"
             >
               {status === "sending" ? "Sending..." : "Send Message"}
             </button>
@@ -146,7 +147,7 @@ export default function Contact() {
         )}
 
         <div className="space-y-6">
-          <div className="bg-blue-50 rounded-2xl border border-blue-100 p-6 space-y-4">
+          <div className="bg-blue-50 rounded-2xl border border-blue-100 p-6 space-y-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
             <div>
               <h3 className="font-semibold text-blue-900 mb-1">Address</h3>
               <p className="text-blue-700 text-sm">
@@ -170,7 +171,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="mt-16 border-t border-blue-100 pt-10">
+      <Reveal className="mt-16 border-t border-blue-100 pt-10">
         <p className="uppercase tracking-widest text-blue-500 text-xs font-semibold mb-3">
           Need Prayer?
         </p>
@@ -228,7 +229,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={prayerStatus === "sending"}
-              className="px-6 py-3 rounded-full bg-blue-900 text-white font-medium hover:bg-blue-700 transition-colors disabled:opacity-60"
+              className="px-6 py-3 rounded-full bg-blue-900 text-white font-medium transition-all duration-200 hover:bg-blue-700 hover:scale-[1.03] active:scale-95 disabled:opacity-60"
             >
               {prayerStatus === "sending" ? "Sending..." : "Submit Prayer Request"}
             </button>
@@ -244,7 +245,7 @@ export default function Contact() {
             )}
           </form>
         )}
-      </div>
+      </Reveal>
     </div>
   );
 }
