@@ -1,17 +1,22 @@
 import { Link } from "react-router-dom";
+import churchFront from "../assets/church-front.jpg";
 
 export default function Home() {
   return (
     <div>
-      <section className="bg-gradient-to-b from-skyblue to-ivory">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
-          <p className="uppercase tracking-widest text-blue-500 text-xs sm:text-sm font-semibold mb-4">
+      <section
+        className="relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${churchFront})` }}
+      >
+        <div className="absolute inset-0 bg-blue-950/70" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
+          <p className="uppercase tracking-widest text-blue-200 text-xs sm:text-sm font-semibold mb-4">
             Welcome to
           </p>
-          <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-blue-900 mb-6">
+          <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-white mb-6">
             IPC Zion Hall
           </h1>
-          <p className="text-blue-700 max-w-xl mx-auto mb-10">
+          <p className="text-blue-100 max-w-xl mx-auto mb-10">
             A warm, welcoming congregation in Lingarajapuram, Bengaluru. Join us
             for worship, fellowship, and growing in faith together.
           </p>
